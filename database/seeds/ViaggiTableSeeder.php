@@ -34,11 +34,11 @@ class ViaggiTableSeeder extends Seeder
             $new_viaggio->arrivo = $faker->city();
             $new_viaggio->metodo_viaggio = $faker->randomElement($metodi_viaggio);
             $new_viaggio->meteo = $faker->randomElement($tempo);
-            $new_viaggio->persone = $faker->rand(1,8);
-            $new_viaggio->amount = $faker->rand(50, 2000);
+            $new_viaggio->persone = $faker->numberBetween(1, 8);
+            $new_viaggio->amount = $faker->numberBetween(50, 2000);
             $new_viaggio->description = $faker->text(500);
-            $new_viaggio->km = $faker->rand(500, 10000);
-            $new_viaggio->pranzo_bordo = $faker->rand(0,1);
+            $new_viaggio->km = $faker->numberBetween(500, 10000);
+            $new_viaggio->pranzo_bordo = $faker->numberBetween(0, 1);
             $new_viaggio->save();
         }
     }
